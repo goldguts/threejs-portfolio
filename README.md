@@ -10,7 +10,7 @@
 
 ## Demo
 
-[Portfolio Website](https://augustuschong.com)
+[Portfolio Website](https://goldguts.github.io/threejs-portfolio/)
 
 <!-- ## Getting Started
 
