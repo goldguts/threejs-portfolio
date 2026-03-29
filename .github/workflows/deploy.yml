@@ -36,13 +36,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Remove symlinks from dist
-        run: find dist/ -type l -delete || true
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: './dist'
 
   deploy:
