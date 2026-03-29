@@ -14,6 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,6 +35,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Remove symlinks from dist
+        run: find dist/ -type l -delete || true
 
       - name: Upload artifact
         uses: actions/upload-artifact@v5
